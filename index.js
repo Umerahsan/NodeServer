@@ -1,22 +1,28 @@
-const express=require('express');
-const app = express();
 
-app.get('/',(req,resp)=>{
-    resp.send('Hello World');
+const http=require('http');
+const app= require('./app');
+const port=process.env.PORT|3000;
+const server= http.createServer(app);
+server.listen(port,()=>{
+    console.log("asdasd");
+    
 });
+// app.get('/',(req,resp)=>{
+//     resp.send('Hello World');
+// });
 
-app.get('/api',(req,resp)=>{
-resp.send(['1','2','3'])
-});
+// app.get('/api',(req,resp)=>{
+// resp.send(['1','2','3'])
+// });
 
-app.get('/api/courses/:id',(req,resp)=>{
-    console.log(req.params.id);
+// app.get('/api/courses/:id',(req,resp)=>{
+//     console.log(req.params.id);
     
-    resp.send(req.params.id);
-    });
+//     resp.send(req.params.id);
+//     });
     
-const port=process.env.port||3000;
-app.listen (3000,()=>{
-    console.log(` Listng on ${port}`);
+// 
+// app.listen (3000,()=>{
+//     console.log(` Listng on ${port}`);
     
-})
+// })
