@@ -7,10 +7,10 @@ const orderRoutes = require('./api/routes/orders');
 const bodyParser=require('body-parser')
 
 app.use(morgan('dev'))
-app.use(bodyParser.urlencoded({
-    extended:true
-}))
-app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({
+//     extended:true
+// }))
+// app.use(bodyParser.json());
 
 
 app.use((req,res,next)=>{
